@@ -1,0 +1,9 @@
+{
+  "event_id": "092501-010-sample-001",
+  "event_type": "PARTICIPANT_ENROLLED",
+  "aggregate_type": "participant_link",
+  "aggregate_id": "community_liver_cohort-001",
+  "occurred_at": "2026-09-24T10:00:00+08:00",
+  "version": 1,
+  "summary": "登记社区肝病队列治理的一条领域事实"
+}
