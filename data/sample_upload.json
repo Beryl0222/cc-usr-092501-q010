@@ -1,0 +1,61 @@
+[
+  {
+    "record_type": "enrollment",
+    "study_id": "CLC-3f9a1b2c4d5e6f708192a3b4",
+    "birth_year": 1968,
+    "sex": "male",
+    "enrolled_at": "2026-09-10T09:00:00+08:00",
+    "client_at": "2026-09-10T09:00:00+08:00"
+  },
+  {
+    "record_type": "consent",
+    "study_id": "CLC-3f9a1b2c4d5e6f708192a3b4",
+    "scope": "baseline+followup",
+    "permissions": {"future_analysis": true, "retain_aggregates": true}
+  },
+  {
+    "record_type": "device",
+    "device_id": "FS-JN-007",
+    "model": "FibroScan-Expert"
+  },
+  {
+    "record_type": "calibration",
+    "device_id": "FS-JN-007",
+    "calibrated_at": "2026-08-01T10:00:00+08:00",
+    "calibration_by": "济南市计量检定院"
+  },
+  {
+    "record_type": "visit",
+    "visit_id": "VISIT-3701-000001",
+    "study_id": "CLC-3f9a1b2c4d5e6f708192a3b4",
+    "visit_type": "baseline",
+    "planned_at": "2026-09-10T09:00:00+08:00",
+    "client_at": "2026-09-10T09:30:00+08:00",
+    "sections": {
+      "baseline": {"birth_year": 1968, "sex": "male", "enrolled_at": "2026-09-10T09:00:00+08:00"},
+      "questionnaire": {
+        "instrument_id": "CLH_BASELINE",
+        "version": 1,
+        "items": {
+          "diabetes_history": "none",
+          "drinker_status": "former",
+          "alcohol_grams_per_day": 0,
+          "prior_liver_disease": "no"
+        }
+      },
+      "diabetes": {"status": "none", "fasting_glucose": 5.4},
+      "alcohol": {"drinker_status": "former", "alcohol_grams_per_day": 0},
+      "noninvasive": {
+        "device_id": "FS-JN-007",
+        "exam_at": "2026-09-10T09:20:00+08:00",
+        "valid_shots": 12,
+        "iqr_median_ratio": 0.18,
+        "lsm_kpa": 8.2,
+        "cap_dbm": 245.0,
+        "ast": 35.0,
+        "alt": 30.0,
+        "platelets": 180
+      }
+    }
+  }
+]

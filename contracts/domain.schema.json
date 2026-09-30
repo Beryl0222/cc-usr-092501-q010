@@ -1,28 +1,48 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "社区肝病队列治理领域事件",
+  "description": "队列治理后端跨模块交换的事实信封。事件一旦写入只可追加，业务修订通过新版本事件表达，原始记录继续用于追溯。",
   "type": "object",
   "required": [
     "event_id",
     "event_type",
     "aggregate_type",
     "aggregate_id",
+    "site_id",
     "occurred_at",
     "version",
-    "summary"
+    "summary",
+    "payload"
   ],
   "properties": {
     "event_id": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "事件全局唯一标识（幂等键）"
     },
     "event_type": {
       "type": "string",
       "enum": [
         "PARTICIPANT_ENROLLED",
+        "CROSS_SITE_LINK_RESOLVED",
+        "CONSENT_GRANTED",
         "VISIT_RECORDED",
+        "SECTION_RECORDED",
+        "SECTION_CORRECTED",
+        "DEVICE_REGISTERED",
+        "CALIBRATION_RECORDED",
+        "QUESTIONNAIRE_VERSION_PUBLISHED",
+        "RULESET_PUBLISHED",
         "UPLOAD_ACCEPTED",
+        "UPLOAD_QUARANTINED",
+        "BATCH_QUARANTINED",
+        "VISIT_FROZEN",
         "ANALYSIS_FROZEN",
+        "SNAPSHOT_PUBLISHED",
+        "RISK_STRATIFIED",
+        "REFERRAL_RECORDED",
+        "REFERRAL_OUTCOME_RECORDED",
+        "FOLLOWUP_STATUS_RECORDED",
         "WITHDRAWAL_APPLIED"
       ]
     },
@@ -30,14 +50,28 @@
       "type": "string",
       "enum": [
         "participant_link",
+        "consent",
         "study_visit",
+        "visit_section",
+        "device",
+        "calibration",
+        "questionnaire",
+        "ruleset",
         "site_upload",
-        "analysis_snapshot"
+        "analysis_snapshot",
+        "risk_assessment",
+        "referral",
+        "followup"
       ]
     },
     "aggregate_id": {
       "type": "string",
       "minLength": 1
+    },
+    "site_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "产生事实的招募站点；中央事件使用 central"
     },
     "occurred_at": {
       "type": "string",
@@ -45,12 +79,21 @@
     },
     "version": {
       "type": "integer",
-      "minimum": 1
+      "minimum": 1,
+      "description": "同一聚合上的单调递增版本"
     },
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "description": "事件负载，结构由 event_type 决定，见 docs 目录的领域说明"
+    },
+    "upload_id": {
+      "type": "string",
+      "description": "随站点上传批次到达的事件携带的上传凭证"
     }
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }

@@ -2,8 +2,15 @@
   "event_id": "092501-010-sample-001",
   "event_type": "PARTICIPANT_ENROLLED",
   "aggregate_type": "participant_link",
-  "aggregate_id": "community_liver_cohort-001",
+  "aggregate_id": "participant:CLC-3f9a1b2c4d5e6f708192a3b4",
+  "site_id": "site-3701",
   "occurred_at": "2026-09-24T10:00:00+08:00",
   "version": 1,
-  "summary": "登记社区肝病队列治理的一条领域事实"
+  "summary": "山东济南站点招募参与者（研究标识由本地映射生成，证件号不落库）",
+  "payload": {
+    "study_id": "CLC-3f9a1b2c4d5e6f708192a3b4",
+    "birth_year": 1968,
+    "sex": "male",
+    "enrolled_at": "2026-09-24T10:00:00+08:00"
+  }
 }
