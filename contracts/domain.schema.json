@@ -14,16 +14,33 @@
   "properties": {
     "event_id": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "事件全局唯一标识；一旦接收不得原地复用为另一份内容"
     },
     "event_type": {
       "type": "string",
       "enum": [
         "PARTICIPANT_ENROLLED",
+        "LINKAGE_RECORDED",
+        "CONSENT_RECORDED",
+        "WITHDRAWAL_APPLIED",
+        "DEVICE_REGISTERED",
+        "DEVICE_CALIBRATED",
+        "QUESTIONNAIRE_PUBLISHED",
+        "RULE_PUBLISHED",
         "VISIT_RECORDED",
+        "QUESTIONNAIRE_RESPONSE_RECORDED",
+        "NITX_RESULT_RECORDED",
+        "RISK_STRATIFIED",
+        "REFERRAL_RECORDED",
+        "REFERRAL_UPDATED",
+        "FOLLOWUP_STATUS_RECORDED",
         "UPLOAD_ACCEPTED",
+        "BATCH_QUARANTINED",
+        "ANALYSIS_LOCKED",
+        "ANALYSIS_UNLOCKED",
         "ANALYSIS_FROZEN",
-        "WITHDRAWAL_APPLIED"
+        "SNAPSHOT_PUBLISHED"
       ]
     },
     "aggregate_type": {
@@ -32,7 +49,11 @@
         "participant_link",
         "study_visit",
         "site_upload",
-        "analysis_snapshot"
+        "analysis_snapshot",
+        "device",
+        "questionnaire",
+        "rule_definition",
+        "referral"
       ]
     },
     "aggregate_id": {
